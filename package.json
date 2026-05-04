@@ -1,0 +1,19 @@
+{
+  "name": "template-slidev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/edgar-treischl/template-slidev.git",
+  "author": "edgar.treischl <edgar.treischl@isb.bayern.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "@slidev/cli": "^52.15.0"
+  },
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/theme-default": "^0.25.0"
+  }
+}
