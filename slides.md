@@ -112,9 +112,18 @@ Use them via:
 
 
 ```mermaid {theme: 'neutral', scale: 0.8}
-sequenceDiagram
-  Alice->John: Hello John, how are you?
-  Note over Alice,John: A typical interaction
+flowchart TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+
 ```
 
 
