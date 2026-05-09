@@ -4,7 +4,6 @@ aspectRatio: 16/9
 comark: true
 layout: TitleSlide
 transition: slide-left
-download: true
 ---
 
 

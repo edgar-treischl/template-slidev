@@ -6,8 +6,7 @@
   "author": "edgar.treischl <edgar.treischl@isb.bayern.de>",
   "license": "MIT",
   "devDependencies": {
-    "@slidev/cli": "^52.15.0",
-    "playwright-chromium": "^1.59.1"
+    "@slidev/cli": "^52.15.0"
   },
   "scripts": {
     "dev": "slidev",

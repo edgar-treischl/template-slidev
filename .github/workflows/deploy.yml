@@ -29,9 +29,6 @@ jobs:
       - name: Install dependencies
         run: nci
 
-      - name: Install Playwright Chromium
-        run: yarn playwright install chromium
-
       - name: Build
         run: nr build --base /${{ github.event.repository.name }}/
 
