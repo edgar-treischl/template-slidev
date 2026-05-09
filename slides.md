@@ -3,7 +3,6 @@ theme: default
 aspectRatio: 16/9
 comark: true
 layout: TitleSlide
-download: true
 ---
 
 
