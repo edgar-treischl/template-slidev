@@ -1,100 +1,83 @@
 ---
-theme: default
-title: My Presentation
-info: |
-  Reusable Slidev Template
-class: text-center
-highlighter: shiki
-drawings:
-  persist: false
-transition: slide-left
-mdc: true
-base: /template-slidev/
+layout: center
+aspectRatio: 16/9
+comark: true
 ---
 
-<TitleSlide>
-  <template #title>
-    My Presentation
-  </template>
-  <template #subtitle>
-    Reusable Slidev Template
-  </template>
-</TitleSlide>
+# Test Slidev
+
+This is the cover page.
 
 ---
+layout: cover
+background: public/test.png
+class: 'text-white'
+---
 
-# Agenda
+# Page 2
 
-- Topic 1
-- Topic 2
-- Topic 3
+This is a page with the layout `center` and a background image.
 
-
+<!-- This is a **note** -->
 
 ---
 
-# Two Column Example
+# Page 3
 
-<TwoColumn>
-  <template #left>
-    <div>
-      <h3>Left Side</h3>
-      <ul>
-        <li>Point A</li>
-        <li>Point B</li>
-      </ul>
-    </div>
-  </template>
+This is a default page without any additional metadata.
 
-  <template #right>
-    <div>
-      <h3>Right Side</h3>
-      <ul>
-        <li>Insight 1</li>
-        <li>Insight 2</li>
-      </ul>
-    </div>
-  </template>
-</TwoColumn>
 
----
-
-# Code Example
+## With Code Block
 
 ```ts
 console.log('Hello, World!')
 ```
 
 
+## Run Code via
 
----
-
-# Latex Support
-
-- Slidev comes with LaTeX support out-of-box, powered by KaTeX.
-
-### Single Line 
-- $\sqrt{3x-1}+(1+x)^2$
-
-
-### Block
-
-$$
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-
----
-
-# Mermaid Diagrams
-
-```mermaid
-sequenceDiagram
-  Alice->John: Hello John, how are you?
-  Note over Alice,John: A typical interaction
+```ts {monaco-run} {autorun:false}
+function distance(x: number, y: number) {
+  return Math.sqrt(x ** 2 + y ** 2)
+}
+console.log(distance(3, 4))
 ```
+
+
+
+
+---
+layout: quote
+---
+
+## Comark
+
+This is a [red text]{style="color:red"} :inline-component{prop="value"}
+
+![](/test.png){width=100px lazy}
+
+::block-component{prop="value"}
+The **default** slot
+::
+
+
+
+---
+
+## Comark II
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
