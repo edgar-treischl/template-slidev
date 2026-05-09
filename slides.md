@@ -3,7 +3,7 @@ theme: default
 aspectRatio: 16/9
 comark: true
 layout: TitleSlide
-title: My Awesome Talk
+download: true
 ---
 
 
@@ -105,3 +105,45 @@ Use them via:
 - MDI: <mdi-rocket-launch class="text-2xl text-blue-500" />
 
 - Or Lucide Icons: <lucide-github />
+
+
+---
+
+## Mermaide Fun
+
+
+```mermaid {theme: 'neutral', scale: 0.8}
+sequenceDiagram
+  Alice->John: Hello John, how are you?
+  Note over Alice,John: A typical interaction
+```
+
+
+---
+
+## LaTeX Fun
+
+### Inline
+
+- Surround your LaTeX with a single `$` on each side for inline rendering.
+
+$\sqrt{3x-1}+(1+x)^2$
+
+
+### Block
+
+- Use two ($$) for block rendering. This mode uses bigger symbols and centers the result.
+
+$$
+\begin{aligned}
+\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \vec{B} &= 0 \\
+\end{aligned}
+$$
+
+
+---
+
+## Test Slide
+
+- More here
