@@ -25,18 +25,6 @@ class: 'text-white'
 
 This is a page with the layout `center` and a background image.
 
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0, y: 0 }"
-  :click-1="{ x: 0, y: 30 }"
-  :click-2="{ y: 60 }"
-  :click-2-4="{ x: 40 }"
-  :leave="{ y: 0, x: 80 }"
->
-  Slidev
-</div>
-
 <!-- This is a **note** -->
 
 ---
