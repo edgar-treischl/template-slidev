@@ -29,8 +29,11 @@ jobs:
       - name: Install dependencies
         run: nci
 
+      - name: Install Playwright Chromium
+        run: yarn playwright install chromium
+
       - name: Build
-        run: nr build --base /${{github.event.repository.name}}/
+        run: nr build --base /${{ github.event.repository.name }}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -43,12 +46,16 @@ jobs:
     permissions:
       pages: write
       id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     needs: build
     runs-on: ubuntu-latest
+
     name: Deploy
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

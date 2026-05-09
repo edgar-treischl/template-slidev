@@ -3,6 +3,8 @@ theme: default
 aspectRatio: 16/9
 comark: true
 layout: TitleSlide
+transition: slide-left
+download: true
 ---
 
 
@@ -23,6 +25,18 @@ class: 'text-white'
 # Page 2
 
 This is a page with the layout `center` and a background image.
+
+<div
+  v-motion
+  :initial="{ x: -80 }"
+  :enter="{ x: 0, y: 0 }"
+  :click-1="{ x: 0, y: 30 }"
+  :click-2="{ y: 60 }"
+  :click-2-4="{ x: 40 }"
+  :leave="{ y: 0, x: 80 }"
+>
+  Slidev
+</div>
 
 <!-- This is a **note** -->
 
@@ -112,17 +126,65 @@ Use them via:
 
 
 ```mermaid {theme: 'neutral', scale: 0.8}
-flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#BB2528'
+    primaryTextColor: '#fff'
+    primaryBorderColor: '#7C0000'
+    lineColor: 'darkgray'
+    secondaryColor: 'orange'
+    tertiaryColor: '#fff'
+---
+        graph TD
+          A[Christmas] -->|Get money| B(Go shopping)
+          B --> C{Let me think}
+          B --> G[/Another/]
+          C ==>|One| D[Laptop]
+          C -->|Two| E[iPhone]
+          C -->|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+
+```
+
+
+---
+
+## C4 Fun
+
+```mermaid {theme: 'neutral', scale: 0.5}
+    C4Dynamic
+    title Test Title
+
+    Container_Boundary(b, "API Application") {
+      
+      Component(c1, "Security Component", "Spring Bean", "Provides functionality Related to signing in, changing passwords, etc.")
+      
+      Component(c2, "Sign In Controller", "Spring MVC Rest Controller", "Allows users to sign in to the Internet Banking System.")
+    }
+
+    ContainerDb(c3, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+
+    Container(c4, "Single-Page Application", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.")
+    
+    Rel(c1, c2, "Submits credentials to", "JSON/HTTPS")
+    Rel(c2, c3, "Calls isAuthenticated() on")
+    Rel(c3, c4, "select * from users where username = ?", "JDBC")
+
+    UpdateRelStyle(c1, c2, $textColor="red", $offsetY="-40")
+    UpdateRelStyle(c2, c3, $textColor="green", $offsetX="-40", $offsetY="60")
+    UpdateRelStyle(c3, c4, $textColor="yellow", $offsetY="-40", $offsetX="10")
+
+
+
+
 
 ```
 
