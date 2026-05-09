@@ -1,16 +1,23 @@
 ---
-layout: center
+theme: default
 aspectRatio: 16/9
 comark: true
+layout: TitleSlide
+title: My Awesome Talk
 ---
 
-# Test Slidev
 
-This is the cover page.
+<template #title>
+Building Beautiful Slides
+</template>
+
+<template #subtitle>
+Vue-powered presentations · May 2026
+</template>
 
 ---
 layout: cover
-background: public/test.png
+background: test.png
 class: 'text-white'
 ---
 
@@ -54,10 +61,10 @@ layout: quote
 
 This is a [red text]{style="color:red"} :inline-component{prop="value"}
 
-![](/test.png){width=100px lazy}
+![Test Image](/test.png){width=250px lazy}
 
 ::block-component{prop="value"}
-The **default** slot
+The **default** slot is a strange thing.
 ::
 
 
@@ -81,3 +88,20 @@ The **default** slot
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
+---
+
+## Icons
+
+#### Add Icons 
+
+```shell 
+yarn add @iconify-json/carbon @iconify-json/mdi @iconify-json/lucide
+```
+
+Use them via:
+
+- Carbon: <carbon-warning class="text-red-500 text-2xl" />
+
+- MDI: <mdi-rocket-launch class="text-2xl text-blue-500" />
+
+- Or Lucide Icons: <lucide-github />
