@@ -1,44 +1,45 @@
 <template>
-  <div class="h-full w-full flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
-    <!-- Animated background elements -->
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl animate-pulse" />
-      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s" />
-    </div>
-
+  <div class="hero-gray-bg h-full w-full flex flex-col justify-center items-center relative overflow-hidden">
     <!-- Main content -->
-    <div class="max-w-2xl px-8 text-center">
-      <!-- Title -->
-      <h1 class="text-7xl font-black mb-6 tracking-tight">
-        <slot name="title" />
+    <div class="max-w-4xl px-8 text-center z-10">
+      <!-- Title with gradient highlight -->
+      <h1 class="text-7xl font-black mb-8 tracking-tight">
+        <span class="highlight-gray">
+          <slot name="title" />
+        </span>
       </h1>
 
       <!-- Subtitle with accent line -->
-      <div class="flex items-center justify-center gap-4 mb-8">
-        <div class="w-12 h-1 bg-gradient-to-r from-transparent to-blue-500 rounded-full" />
-        <p class="text-2xl text-gray-600 font-light">
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <div class="w-12 h-1 bg-gradient-to-r from-transparent to-slate-400 rounded-full" />
+        <p class="text-2xl text-slate-300 font-light">
           <slot name="subtitle" />
         </p>
-        <div class="w-12 h-1 bg-gradient-to-l from-transparent to-emerald-500 rounded-full" />
+        <div class="w-12 h-1 bg-gradient-to-l from-transparent to-slate-400 rounded-full" />
+      </div>
+
+      <!-- Author -->
+      <div class="text-slate-400 text-sm mb-8">
+        <slot name="author" />
       </div>
     </div>
 
-    <!-- Social icons - bottom right -->
+    <!-- CTA buttons - bottom right (small icons) -->
     <div class="abs-br m-6 text-2xl flex gap-3">
-      <a href="https://www.youtube.com/@KareemKreates" target="_blank" class="slidev-icon-btn hover:scale-110 transition-transform">
-        <carbon:logo-youtube />
+      <a href="#" target="_blank" rel="noopener noreferrer" class="slidev-icon-btn" title="Personal Website">
+        <carbon:link />
       </a>
-      <a href="https://github.com/KareimGazer" target="_blank" class="slidev-icon-btn hover:scale-110 transition-transform">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="slidev-icon-btn" title="GitHub Profile">
         <carbon:logo-github />
       </a>
-      <a href="https://x.com/KareimGazer" target="_blank" class="slidev-icon-btn hover:scale-110 transition-transform">
-        <carbon:logo-x />
+      <a href="#" target="_blank" rel="noopener noreferrer" class="slidev-icon-btn" title="Download PDF">
+        <carbon:document-download />
       </a>
     </div>
 
     <!-- Date footer - bottom left -->
-    <div class="abs-bl m-6 text-sm text-gray-500 font-mono">
-      <div>Generated: {{ new Date().toLocaleDateString() }}</div>
+    <div class="abs-bl m-6 text-xs text-slate-400 font-mono">
+      <div>{{ new Date().toLocaleDateString() }}</div>
       <div>{{ new Date().toLocaleTimeString() }}</div>
     </div>
   </div>
@@ -49,6 +50,45 @@
 </script>
 
 <style scoped>
+/* Hero Gray Background */
+.hero-gray-bg {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(148, 163, 184, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #111827,
+      #0b1220
+    );
+
+  animation: gray-shift 18s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gray-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Highlight gradient for text */
+.highlight-gray {
+  background: linear-gradient(90deg, #e2e8f0, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .abs-br {
   @apply absolute bottom-0 right-0;
 }
@@ -58,7 +98,7 @@
 }
 
 .slidev-icon-btn {
-  @apply inline-flex items-center justify-center w-10 h-10 text-gray-700 hover:text-blue-600 transition-colors;
+  @apply inline-flex items-center justify-center w-10 h-10 text-slate-300 hover:text-slate-100 transition-colors hover:scale-110;
 }
 
 /* Smooth entrance */

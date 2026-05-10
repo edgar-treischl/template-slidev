@@ -5,7 +5,7 @@ highlighter: shiki
 css: unocss
 colorSchema: light
 layout: TitleSlide
-transition: slide-left
+transition: fade
 selectable: true
 glowSeed: 229
 routerMode: hash
@@ -16,7 +16,11 @@ Test Slides
 </template>
 
 <template #subtitle>
-Test Subtitle · May 2026
+Test Subtitle
+</template>
+
+<template #author>
+Dr. Edgar Treischl
 </template>
 
 ---
