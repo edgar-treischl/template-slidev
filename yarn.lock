@@ -334,6 +334,13 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.11.tgz#a269e055e40e2f45873bae9d1a2fdccbd314ea3f"
   integrity sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==
 
+"@iconify-json/bi@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@iconify-json/bi/-/bi-1.2.7.tgz#e283f34f60f4a6cdf1890db0867131e1ec4ed3b7"
+  integrity sha512-IPz8WNxmLkH1I9msl+0Q4OnmjjvP4uU0Z61a4i4sqonB6vKSbMGUWuGn8/YuuszlReVj8rf+3gNv5JU8Xoljyg==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/carbon@^1.2.20":
   version "1.2.20"
   resolved "https://registry.yarnpkg.com/@iconify-json/carbon/-/carbon-1.2.20.tgz#27b77f52b8691a079f5da5850ebea66da7915a0a"
@@ -1548,7 +1555,7 @@
   dependencies:
     "@unocss/core" "66.6.8"
 
-"@unocss/vite@66.6.8":
+"@unocss/vite@66.6.8", "@unocss/vite@^66.6.8":
   version "66.6.8"
   resolved "https://registry.yarnpkg.com/@unocss/vite/-/vite-66.6.8.tgz#045daab058f99b4c4f534130a6f6a81772541c16"
   integrity sha512-bXfEnEHdW7zTGLIYU16MsfKSFy3Q47Pevhrt5f9fOGzC4UI1JGkkoQSfoFpXZGliDrhoSFK4Msz9Jt43Ta4j+w==

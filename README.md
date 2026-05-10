@@ -150,3 +150,14 @@ yarn build
 - Slidev Documentation: https://sli.dev/
 - Vue 3 Documentation: https://vuejs.org/
 - UnoCSS Icons: https://icones.js.org/
+
+
+```
+<template #title>
+Test Slides
+</template>
+
+<template #subtitle>
+Test Subtitle · May 2026
+</template>
+```

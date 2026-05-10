@@ -7,7 +7,9 @@
   "license": "MIT",
   "devDependencies": {
     "@slidev/cli": "^52.15.0",
-    "playwright-chromium": "^1.59.1"
+    "@unocss/vite": "^66.6.8",
+    "playwright-chromium": "^1.59.1",
+    "unocss": "^66.6.8"
   },
   "scripts": {
     "dev": "slidev",
@@ -15,6 +17,7 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@iconify-json/bi": "^1.2.7",
     "@iconify-json/carbon": "^1.2.20",
     "@iconify-json/lucide": "^1.2.105",
     "@iconify-json/mdi": "^1.2.3",
